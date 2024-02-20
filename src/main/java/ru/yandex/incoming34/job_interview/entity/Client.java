@@ -12,5 +12,9 @@ public class Client {
     private Long id;
 
     @Column(name = "client_name")
-    private String name;
+    private final String name;
+
+    public Client(String name) {
+        this.name = name;
+    }
 }
