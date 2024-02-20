@@ -9,9 +9,9 @@ import lombok.NoArgsConstructor;
 @Table(name = "clients")
 @Getter
 @NoArgsConstructor
-public class Client extends AbstractClient {
+public class BriefClient extends AbstractClient {
 
-    public Client(String clientName) {
+    public BriefClient(String clientName) {
         super(clientName);
     }
 }

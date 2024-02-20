@@ -5,16 +5,15 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import ru.yandex.incoming34.job_interview.repo.*;
-import ru.yandex.incoming34.job_interview.structures.AbstractContact;
+import ru.yandex.incoming34.job_interview.structures.ErrorResponse;
 import ru.yandex.incoming34.job_interview.structures.ContactType;
-import ru.yandex.incoming34.job_interview.structures.CoursesResponse;
 import ru.yandex.incoming34.job_interview.structures.NewContactType;
+import ru.yandex.incoming34.job_interview.structures.entity.AbstractContact;
 import ru.yandex.incoming34.job_interview.structures.entity.client.AbstractClient;
-import ru.yandex.incoming34.job_interview.structures.entity.client.Client;
+import ru.yandex.incoming34.job_interview.structures.entity.client.BriefClient;
 import ru.yandex.incoming34.job_interview.structures.entity.email.ClientEmailFull;
 import ru.yandex.incoming34.job_interview.structures.entity.phone.ClientPhoneFull;
 
-import java.util.Objects;
 import java.util.Optional;
 
 @RestController
@@ -28,26 +27,26 @@ public class Controller {
     private final ClientWithEmailsRepo clientWithEmailsRepo;
     private final ClientEmailRepo clientEmailRepo;
     private final ClientPhoneRepo clientPhoneRepo;
-    public static final String SUCCESS_MESSAGE = "SUCCESS";
+
 
     @PostMapping(value = "/new_client")
     @Operation(description = "Добавление нового клиента.")
-    public Client addClient(String clientName){
-       return clientRepo.save(new Client(clientName));
+    public BriefClient addClient(String clientName){
+       return clientRepo.save(new BriefClient(clientName));
     }
 
     @PostMapping(value = "/new_contact")
     @Operation(description = "Добавление нового контакта.")
-    public Optional<? extends AbstractContact> addContact(Long clientId, String value, NewContactType contactType){
+    public AbstractContact addContact(Long clientId, String value, NewContactType contactType){
         return switch (contactType) {
-            case EMAIL -> Optional.of(clientEmailRepo.save(new ClientEmailFull(clientId, value)));
-            case PHONE -> Optional.of(clientPhoneRepo.save(new ClientPhoneFull(clientId, value)));
+            case EMAIL -> clientEmailRepo.save(new ClientEmailFull(clientId, value));
+            case PHONE -> clientPhoneRepo.save(new ClientPhoneFull(clientId, value));
         };
     }
 
     @GetMapping(value = "/all_clients")
     @Operation(description = "Получение списка клиентов.")
-    public Iterable<Client> allClients() {
+    public Iterable<BriefClient> allClients() {
         return clientRepo.findAll();
     }
 
@@ -63,7 +62,7 @@ public class Controller {
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(value = {RuntimeException.class})
-    private CoursesResponse handleException(RuntimeException exception) {
-        return new CoursesResponse(Objects.nonNull(exception.getMessage()) ? exception.getMessage() : "Unknown Error");
+    private ErrorResponse handleException(RuntimeException exception) {
+        return ErrorResponse.of(exception);
     }
 }

@@ -5,7 +5,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import ru.yandex.incoming34.job_interview.structures.AbstractContact;
+import ru.yandex.incoming34.job_interview.structures.entity.AbstractContact;
 
 @MappedSuperclass
 @NoArgsConstructor
