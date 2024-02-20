@@ -10,4 +10,8 @@
 
     <include
             file="db/changelog/createTables/create-table-clients.xml"/>
+    <include
+            file="db/changelog/createTables/create-table-phone_number.xml"/>
+    <include
+            file="db/changelog/createTables/create-table-emails.xml"/>
 </databaseChangeLog>
