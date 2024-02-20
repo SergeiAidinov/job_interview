@@ -7,4 +7,4 @@ CREATE TABLE phone_numbers(
                         FOREIGN KEY (client_id) REFERENCES clients (client_id) ON DELETE CASCADE
 );
 
---rollback DROP TABLE phone_numbers;
+--rollback DROP TABLE IF EXISTS phone_numbers;

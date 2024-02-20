@@ -7,4 +7,4 @@ CREATE TABLE clients(
                         PRIMARY KEY (client_id)
 );
 
---rollback DROP TABLE clients;
+--rollback DROP TABLE IF EXISTS clients;
