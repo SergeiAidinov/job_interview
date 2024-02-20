@@ -1,4 +1,4 @@
-package ru.yandex.incoming34.job_interview.entity;
+package ru.yandex.incoming34.job_interview.structures.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -12,7 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-public class FullClient {
+public class FullClient extends AbstractClient{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

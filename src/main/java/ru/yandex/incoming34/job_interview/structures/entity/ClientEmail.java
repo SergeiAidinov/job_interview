@@ -1,4 +1,4 @@
-package ru.yandex.incoming34.job_interview.entity;
+package ru.yandex.incoming34.job_interview.structures.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -12,8 +12,8 @@ import lombok.NoArgsConstructor;
 @Getter
 public class ClientEmail {
 
-    @Column(name = "client_id")
-    private Long clientId;
     @Id
     private String email;
+   /* @Column(name = "client_id")
+    private Long clientId;*/
 }

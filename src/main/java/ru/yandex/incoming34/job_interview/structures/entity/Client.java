@@ -1,4 +1,4 @@
-package ru.yandex.incoming34.job_interview.entity;
+package ru.yandex.incoming34.job_interview.structures.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

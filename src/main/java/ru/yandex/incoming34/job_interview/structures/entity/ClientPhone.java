@@ -1,4 +1,4 @@
-package ru.yandex.incoming34.job_interview.entity;
+package ru.yandex.incoming34.job_interview.structures.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,16 +9,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name ="phone_numbers")
+@Table(name = "phone_numbers")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 public class ClientPhone {
 
-    @Column(name = "client_id")
-    private Long clientId;
     @Id
     @Column(name = "phone_number")
     private String phoneNumber;
-
+    /*@Column(name = "client_id")
+    private Long clientId;*/
 }
