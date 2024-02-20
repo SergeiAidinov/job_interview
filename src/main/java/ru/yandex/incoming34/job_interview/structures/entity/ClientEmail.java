@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name ="emails")
+@Table(name = "emails")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -14,6 +14,4 @@ public class ClientEmail {
 
     @Id
     private String email;
-   /* @Column(name = "client_id")
-    private Long clientId;*/
 }

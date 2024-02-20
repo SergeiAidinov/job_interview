@@ -18,6 +18,4 @@ public class ClientPhone {
     @Id
     @Column(name = "phone_number")
     private String phoneNumber;
-    /*@Column(name = "client_id")
-    private Long clientId;*/
 }

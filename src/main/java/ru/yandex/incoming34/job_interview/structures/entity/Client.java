@@ -1,26 +1,17 @@
 package ru.yandex.incoming34.job_interview.structures.entity;
 
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name ="clients")
-@NoArgsConstructor
-@AllArgsConstructor
+@Table(name = "clients")
 @Getter
-public class Client {
+@NoArgsConstructor
+public class Client extends AbstractClient {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "client_id")
-    private Long id;
-
-    @Column(name = "client_name")
-    private String name;
-
-    public Client(String name) {
-        this.name = name;
+    public Client(String clientName) {
+        super(clientName);
     }
 }

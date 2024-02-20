@@ -1,25 +1,19 @@
 package ru.yandex.incoming34.job_interview.structures.entity;
 
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
+import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Entity
-@Table(name ="clients")
+@Table(name = "clients")
 @NoArgsConstructor
-@AllArgsConstructor
 @Getter
-public class ClientWithPhoneNumbers extends AbstractClient{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "client_id")
-    private Long id;
-
-    @Column(name = "client_name")
-    private String name;
+public class ClientWithPhoneNumbers extends AbstractClient {
 
     @OneToMany
     @JoinColumn(name = "client_id")
