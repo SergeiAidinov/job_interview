@@ -21,5 +21,5 @@ public class FullClient extends AbstractClient {
 
     @OneToMany
     @JoinColumn(name = "client_id")
-    private List<ClientEmail> clientEmailList;
+    private List<ClientEmailBrief> clientEmailList;
 }

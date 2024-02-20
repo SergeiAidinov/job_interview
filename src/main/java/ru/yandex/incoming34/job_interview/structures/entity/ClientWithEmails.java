@@ -1,9 +1,10 @@
 package ru.yandex.incoming34.job_interview.structures.entity;
 
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
+import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 import java.util.List;
 
@@ -14,7 +15,7 @@ public class ClientWithEmails extends AbstractClient {
 
     @OneToMany
     @JoinColumn(name = "client_id")
-    private List<ClientEmail> clientEmailList;
+    private List<ClientEmailBrief> clientEmailList;
 
     public ClientWithEmails() {
         super();
