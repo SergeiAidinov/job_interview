@@ -37,8 +37,8 @@ public class Controller {
 
     @PostMapping(value = "/new_contact")
     @Operation(description = "Добавление нового контакта.")
-    public AbstractContact addContact(Long clientId, String value, NewContactType contactType){
-        return switch (contactType) {
+    public AbstractContact addContact(Long clientId, String value, NewContactType newContactType){
+        return switch (newContactType) {
             case EMAIL -> clientEmailRepo.save(new ClientEmailFull(clientId, value));
             case PHONE -> clientPhoneRepo.save(new ClientPhoneFull(clientId, value));
         };
