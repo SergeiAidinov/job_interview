@@ -1,24 +1,23 @@
-package ru.yandex.incoming34.job_interview.structures.entity;
+package ru.yandex.incoming34.job_interview.structures.entity.email;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "phone_numbers")
+@Table(name = "emails")
 @NoArgsConstructor
-@AllArgsConstructor
+//@AllArgsConstructor
 @Getter
-public class ClientPhoneFull extends AbstractClientPhone {
+public class ClientEmailFull extends AbstractClientEmail{
 
     @Column(name = "client_id")
     private Long clientId;
 
-    public ClientPhoneFull(Long clientId, String phoneNumber) {
-        super(phoneNumber);
+    public ClientEmailFull(Long clientId, String value) {
+        super(value);
         this.clientId = clientId;
     }
 }

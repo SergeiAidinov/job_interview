@@ -1,10 +1,7 @@
-package ru.yandex.incoming34.job_interview.structures.entity;
+package ru.yandex.incoming34.job_interview.structures.entity.phone;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -13,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 //@AllArgsConstructor
 @Getter
-public class ClientPhone extends AbstractClientPhone{
+public class ClientPhoneBrief extends AbstractClientPhone{
 
 
 }
