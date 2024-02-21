@@ -14,7 +14,7 @@
             <pattern>%logger{5} - %msg%n</pattern>
         </encoder>
     </appender>
-    <root level="ERROR">
+    <root level="INFO">
         <appender-ref ref="ROLLING_FILE"/>
         <appender-ref ref="STDOUT"/>
     </root>
