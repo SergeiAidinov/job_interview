@@ -8,9 +8,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "phone_numbers")
 @NoArgsConstructor
-//@AllArgsConstructor
 @Getter
 public class ClientPhoneBrief extends AbstractClientPhone{
-
 
 }
