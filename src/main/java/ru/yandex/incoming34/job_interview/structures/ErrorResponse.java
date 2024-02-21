@@ -5,11 +5,14 @@ import lombok.RequiredArgsConstructor;
 
 import java.util.Objects;
 
-@RequiredArgsConstructor
 @Getter
 public class ErrorResponse {
 
     private final String message;
+
+    private ErrorResponse(String message) {
+        this.message = message;
+    }
 
     public static ErrorResponse of(RuntimeException exception) {
          return new ErrorResponse(Objects.nonNull(exception.getMessage()) ? exception.getMessage() : "Unknown Error");
