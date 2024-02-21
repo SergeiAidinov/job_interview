@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "emails")
 @NoArgsConstructor
-//@AllArgsConstructor
 @Getter
 public class ClientEmailFull extends AbstractClientEmail{
 

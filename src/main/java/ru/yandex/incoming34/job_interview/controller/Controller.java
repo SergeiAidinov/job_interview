@@ -18,7 +18,7 @@ import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-@RestController
+@RestController(value = "controller")
 @RequestMapping(value = "/api")
 @AllArgsConstructor
 public class Controller {

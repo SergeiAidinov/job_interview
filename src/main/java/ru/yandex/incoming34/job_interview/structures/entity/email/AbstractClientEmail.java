@@ -15,8 +15,4 @@ public abstract class AbstractClientEmail extends AbstractContact {
 
     @Id
     private String email;
-
-    /*public AbstractClientEmail(String email) {
-        this.email = email;
-    }*/
 }
